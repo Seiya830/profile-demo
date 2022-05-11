@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo,
+    sans-serif;
+}
+
+@mixin title {
+  display: inline-block;
+  font-size: 32px;
+  border-bottom: 1px solid #393e46;
+  padding-bottom: 0;
+  margin-bottom: 60px;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  display: flex;
+
+  h1 {
+    font-size: 25px;
+    line-height: 100%;
+    background: #393e46;
+    padding: 10.4px 20px;
+    height: 20px;
+    color: #fff;
+    margin: 10px 15px;
+  }
+  nav {
+    margin-left: auto;
+  }
+
+  ul {
+    text-align: right;
+    display: flex;
+  }
+  li {
+    margin: 22px 13px;
+  }
+}
+
+main {
+  .top-img {
+    height: 600px;
+    img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+    }
+  }
+
+  .about {
+    margin-top: 80px;
+    text-align: center;
+    .section-title {
+      @include title;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin: -2px 0 10px 14px;
+      font-size: 16px;
+      text-align: initial;
+    }
+    p {
+      font-size: 14.4px;
+      margin: 0 14px;
+      text-align: initial;
+    }
+  }
+
+  .bicycle {
+    text-align: center;
+    margin-top: 100px;
+    h2 {
+      @include title;
+    }
+    img {
+      width: 345px;
+      height: 228px;
+      // margin: 0 15px 10px 15px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 14.4px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+footer {
+  p {
+    margin: 138px 0 10px 0;
+    text-align: center;
+    font-size: 10px;
+  }
+}
+
+// スマホサイズ以上 画面幅が600px以上で適用される
+@media screen and (min-width: 600px) {
+  header {
+    h1 {
+      margin-left: 230px;
+    }
+    ul {
+      margin-right: 214px;
+    }
+  }
+
+  main .about {
+    .section-title {
+      margin-bottom: 63px;
+    }
+    .profile {
+      margin: 0 auto;
+      width: 42%;
+      img {
+        float: left;
+        margin-right: 35px;
+      }
+      h2 {
+        font-size: 16px;
+        padding-top: 5px;
+        text-align: initial;
+      }
+      p {
+        text-align: initial;
+        margin: 0;
+        overflow: hidden;
+        font-size: 14.4px;
+      }
+    }
+  }
+
+  main .bicycle {
+    margin-top: 99px;
+    .bicycle-img {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      img {
+        width: 262px;
+        height: 174px;
+        text-align: center;
+      }
+    }
+    .bicycle-img-wrap {
+      margin: 0 8.1px;
+      h3 {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  footer {
+    p {
+      margin-top: 75px;
+    }
+  }
+}
